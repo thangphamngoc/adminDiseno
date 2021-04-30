@@ -14,7 +14,7 @@ export default [
   { path: '/email/resend', name: 'verification.resend', component: page('auth/verification/resend.vue') },
 
   { path: '/home', name: 'home', component: page('home.vue') },
-  { path: '/manager-nick', name: 'nickManager', component: page('nickManager.vue') },
+  { path: '/manager-home', name: 'homeManager', component: page('homeManager.vue') },
   { path: '/total-day-nick', name: 'totalDayNick', component: page('totalDayNick.vue') },
   { path: '/detail-add-day', name: 'detailAddDay', component: page('detailAddDay.vue') },
 

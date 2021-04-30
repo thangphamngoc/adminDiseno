@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import ElementUI from "element-ui";
 
 Vue.use(Vuex)
-
+Vue.use(ElementUI);
 // Load store modules dynamically.
 const requireContext = require.context('./modules', false, /.*\.js$/)
 

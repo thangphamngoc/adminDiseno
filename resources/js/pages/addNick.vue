@@ -3,7 +3,7 @@
     <div v-if="active" class="dialog-backdrop">
       <div class="dialog-container" @click.stop>
         <div class="d-flex justify-content-between">
-          <h3>Thêm mới nick fb</h3>
+          <h3>Thêm mới Banner Home</h3>
           <button
             type="button"
             class="btn btn-danger"
@@ -20,58 +20,71 @@
           @submit.prevent="submitForm()"
         >
           <div class="form-row">
-            <div class="col-md-4 mb-3" prop="nick_name">
-              <label>Tên FB </label>
+            <div class="col-md-4 mb-3" prop="title">
+              <label><span class="text-danger">*</span> Tiêu đề banner </label>
               <input
                 type="text"
-                v-model="dataCreate.nick_name"
+                v-model="dataCreate.title"
                 class="form-control"
                 aria-describedby="emailHelp"
-                placeholder="Nhập tên fb"
+                placeholder="Nhập đề banner"
                 required
               />
-              <!-- <small id="emailHelp" class="form-text text-muted"
-                >We'll never share your email with anyone else.</small
-              > -->
             </div>
-            <div class="col-md-4 mb-3" prop="username_fb">
-              <label>Tên đăng nhập </label>
+            <div class="col-md-4 mb-3" prop="titleEn">
+              <label>Tiêu đề banner EN </label>
               <input
-                v-model="dataCreate.username_fb"
+                v-model="dataCreate.titleEn"
                 type="text"
                 class="form-control"
-                placeholder="Nhập sđt/email/uid"
-                required
+                placeholder="Nhập tiêu đề banner EN"
               />
             </div>
-            <div class="col-md-4 mb-3" prop="password_fb">
-              <label>Mật khẩu </label>
+            <div class="col-md-4 mb-3" prop="content">
+              <label><span class="text-danger">*</span> Nội dung banner</label>
               <input
-                v-model="dataCreate.password_fb"
+                v-model="dataCreate.content"
                 type="text"
                 class="form-control"
-                placeholder="Nhập password"
+                placeholder="Nhập nội dung banner"
                 required
               />
             </div>
-            <div class="col-md-4 mb-3" prop="url_fb">
-              <label>Đường dẫn FB </label>
+            <div class="col-md-4 mb-3" prop="contentEn">
+              <label>Nội dung banner EN </label>
               <input
-                v-model="dataCreate.url_fb"
+                v-model="dataCreate.contentEn"
                 type="text"
                 class="form-control"
-                placeholder="Nhập url fb"
+                placeholder="Nhập nội dung banner EN"
+              />
+            </div>
+            <div class="col-md-4 mb-3" prop="titlePicture">
+              <label><span class="text-danger">*</span> Alt ảnh</label>
+              <input
+                v-model="dataCreate.titlePicture"
+                type="text"
+                class="form-control"
+                placeholder="Nhập alt ảnh"
                 required
               />
             </div>
-            <div class="col-md-4 mb-3" prop="number_friend">
-              <label>Số bạn bè hiện tại </label>
+            <div class="col-md-4 mb-3" prop="titlePictureEn">
+              <label>Alt ảnh EN</label>
               <input
-                v-model="dataCreate.number_friend"
+                v-model="dataCreate.titlePictureEn"
+                type="text"
+                class="form-control"
+                placeholder="Nhập alt ảnh EN"
+              />
+            </div>
+            <div class="col-md-4 mb-3" prop="sort">
+              <label>Vị trí banner</label>
+              <input
+                v-model="dataCreate.sort"
                 type="number"
                 class="form-control"
-                placeholder="Tổng số bạn bè"
-                required
+                placeholder="Nhập vị trí banner"
               />
             </div>
             <div class="col-md-4 mb-3" v-if="update == true">
@@ -79,12 +92,10 @@
               <select
                 class="form-select form-select-lg col-md-12"
                 style="padding: 5px 0 6px 5px"
-                v-model="dataCreate.status_nick"
+                v-model="dataCreate.status"
               >
-                <option selected value="1">Đang hoạt động</option>
-                <option value="0">Full bạn bè</option>
-                <option value="2">Không hoạt động</option>
-                <option value="4">Die</option>
+                <option selected value="1">Active</option>
+                <option value="0">Hide</option>
               </select>
             </div>
 
@@ -99,19 +110,13 @@
               >
             </div> -->
           </div>
-          <div class="input-group-prepend" v-if="!update">
-            <p>Upload ảnh nick fb</p>
+          <div class="input-group-prepend">
+            <p>Upload ảnh banner <i>(1920 x 1080)</i></p>
           </div>
           <!-- <img src="url('storage/images/123.png')" alt="123" title="12" /> -->
-          <div class="row" v-if="!update">
-            <div class="col-md-3" v-for="(item, key) in images" :key="key">
-              <img
-                v-if="item != ''"
-                :src="item"
-                class="img-responsive"
-                height="90%"
-                width="90%"
-              />
+          <div class="row">
+            <div class="col-md-3" v-if="images != ''">
+              <img :src="images" class="img-responsive" height="90%" width="90%" />
               <button
                 type="button"
                 class="btn btn-danger remove-button"
@@ -127,8 +132,6 @@
                 id="files"
                 v-on:change="onImageChange"
                 class="form-control custom-file"
-                :limit="5"
-                multiple
                 ref="attachments"
                 required
               />
@@ -172,17 +175,18 @@ export default {
   data() {
     return {
       dataCreate: {
-        nick_name: "",
-        password_fb: "",
-        number_friend: "",
-        username_fb: "",
-        url_fb: "",
-        status_nick: 1,
+        title: "",
+        titleEn: "",
+        content: "",
+        contentEn: "",
+        titlePicture: "",
+        titlePictureEn: "",
+        sort: "",
       },
       update: false,
       loadingButton: false,
-      images: [],
-      photos: [],
+      images: "",
+      photos: "",
     };
   },
   methods: {
@@ -209,16 +213,14 @@ export default {
     },
     submitForm() {
       let formDatas = new FormData();
-
-      for (var i = 0; i < this.photos.length; i++) {
-        let file = this.photos[i];
-        formDatas.append("photos[" + i + "]", file);
+      if (this.photos != '') {
+        formDatas.append("photos", this.photos);
       }
       for (var key in this.dataCreate) {
         formDatas.append(key, this.dataCreate[key]);
       }
       axios
-        .post("/api/nick/add", formDatas, config)
+        .post("/api/home/banner", formDatas, config)
         .then((resp) => {
           this.handleBackdropClick();
           Swal.fire({
@@ -251,8 +253,8 @@ export default {
       for (var key in this.dataCreate) {
         this.dataCreate[key] = "";
       }
-      this.images = [];
-      this.photos = [];
+      this.images = "";
+      this.photos = "";
       this.$parent.searchPropertis();
     },
     onImageChange() {
@@ -263,7 +265,7 @@ export default {
       if (!files.length) return;
 
       for (let i = 0; i < files.length; i++) {
-        this.photos.push(files[i]);
+        this.photos = files[i];
         this.createImage(files[i]);
       }
 
@@ -274,17 +276,17 @@ export default {
       // }
     },
     createImage(file) {
-      let reader = new FileReader();
-      let vm = this;
-      reader.onload = (e) => {
-        vm.images.push(e.target.result);
-      };
-      reader.readAsDataURL(file);
-    },
-    removeImage: function (key) {
-      this.images.splice(key, 1);
-      if (this.images.length == 0) return;
-    },
+    let reader = new FileReader();
+    let vm = this;
+    reader.onload = (e) => {
+      vm.images = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  },
+    removeImage() {
+    this.images = "";
+    if (this.images == "") return;
+  },
     // uploadImage() {
     //   axios.post("/image/store", { image: this.image }).then((response) => {
     //     if (response.data.success) {

@@ -125,12 +125,12 @@
               data-toggle="collapse"
               aria-expanded="false"
               class="dropdown-toggle"
-              >Quản lý Nick</a
+              >Manager Home</a
             >
             <ul class="collapse list-unstyled" id="homeSubmenu1">
               <li @click="menuToggle()">
-                <router-link :to="{ name: 'nickManager' }">
-                  Danh sách nick
+                <router-link :to="{ name: 'homeManager' }">
+                  Banner
                 </router-link>
               </li>
               <li @click="menuToggle()">

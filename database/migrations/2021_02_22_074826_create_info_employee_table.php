@@ -18,7 +18,6 @@ class CreateInfoEmployeeTable extends Migration
             $table->timestamps();
 
             $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('school_id')->unsigned();
             $table->bigInteger('id_create')->nullable();
             $table->string('create_by')->nullable();
 
@@ -42,7 +41,6 @@ class CreateInfoEmployeeTable extends Migration
             $table->string('facebook')->nullable();
             $table->string('verify_code_school')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('school_id')->references('id')->on('schools');
         });
     }
 

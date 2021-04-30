@@ -8,19 +8,19 @@
           <router-link :to="{ name: 'home' }">
             <h3 align="center">
               <i
-                class="fa fa-flask"
+                class="fa fa-drafting-compass"
                 aria-hidden="true"
                 style="margin-right: 5px"
               ></i
-              >Chemistry
+              >Diseno
             </h3>
           </router-link>
         </div>
 
         <ul class="list-unstyled components">
           <!-- <p>Dummy Heading</p> -->
-          <li class="active d-flex" style="background: #6d7fcc">
-            <router-link :to="{ name: 'home' }"> Home </router-link>
+          <li class="active d-flex" style="background: #12243a">
+            <router-link :to="{ name: 'home' }"> <i class="fa fa-home"></i> Home </router-link>
             <!-- <p
               style="
                 width: 100%;
@@ -52,12 +52,12 @@
               data-toggle="collapse"
               aria-expanded="false"
               class="dropdown-toggle"
-              >Quản lý Nick</a
+              >Manager Home</a
             >
             <ul class="collapse list-unstyled" id="homeSubmenu1">
               <li>
-                <router-link :to="{ name: 'nickManager' }">
-                  Danh sách nick
+                <router-link :to="{ name: 'homeManager' }">
+                  Banner
                 </router-link>
               </li>
               <li>

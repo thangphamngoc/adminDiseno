@@ -49,7 +49,7 @@
       </div>
       
     </div> -->
-    <div class="row">
+    <!-- <div class="row">
       <div
         class="col-md-4 item-post"
         v-for="(item, key) in responseList"
@@ -75,11 +75,6 @@
               backgroundImage: 'url(' + item.imageList[0].filename + ')',
             }"
           ></div>
-          <!-- <img
-            :src="item.imageList[0].filename"
-            alt="Lights"
-            style="width: 100%; height: 300px"
-          /> -->
           <div class="caption">
             <h4>{{ item.postData.title }}</h4>
             <span>Detail</span>
@@ -92,7 +87,7 @@
         </div>
         
       </div>
-    </div>
+    </div> -->
     <view-post
       :active.sync="showDetailPostDialog"
       @dialog-close="dialogCloseDetailPostMethod()"

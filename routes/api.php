@@ -47,14 +47,14 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::patch('settings/password', 'Settings\PasswordController@update');
 
     // manager nick
-    Route::post('nick/add', 'NickFbController@store');
-    Route::get('nick/data', 'NickFbController@index');
-    Route::put('nick/update', 'NickFbController@update');
-    Route::get('nick/detail-day', 'NickFbController@detailAddDay');
-    Route::post('nick/create-add-day', 'NickFbController@createAddDay');
-    Route::get('nick/view-detail-day/{id}', 'NickFbController@viewAddDay');
+    Route::post('home/banner', 'HomeBannerController@store');
+    Route::get('home/data', 'HomeBannerController@index');
+    Route::put('home/update', 'HomeBannerController@update');
+    Route::get('nick/detail-day', 'HomeBannerController@detailAddDay');
+    Route::post('nick/create-add-day', 'HomeBannerController@createAddDay');
+    Route::get('nick/view-detail-day/{id}', 'HomeBannerController@viewAddDay');
 
-    Route::get('nick/detail-add-day', 'NickFbController@addDayDetail');
+    Route::get('nick/detail-add-day', 'HomeBannerController@addDayDetail');
     //end manager nick
 
     // manager ctv
@@ -70,8 +70,8 @@ Route::group(['middleware' => 'auth:api'], function () {
     //end total day
 
     //home
-    Route::get('home/data', 'HomeController@staticsAdd');
-    Route::get('home/post', 'HomeController@searchPost');
+    Route::get('home1/data', 'HomeController@staticsAdd');
+    Route::get('home1/post', 'HomeController@searchPost');
     
 
     //end home

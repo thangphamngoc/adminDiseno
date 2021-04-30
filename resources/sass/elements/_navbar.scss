@@ -63,14 +63,14 @@ a[data-toggle="collapse"] {
 
 #sidebar {
   /* don't forget to add all the previously mentioned styles here too */
-  background: #7386D5;
+  background: rgb(48, 65, 86);
   color: #fff;
   transition: all 0.3s;
 }
 
 #sidebar .sidebar-header {
-  padding: 20px;
-  background: #6d7fcc;
+  padding: 35px 20px 0 20px;
+  background: rgb(48, 65, 86);
 }
 
 #sidebar ul.components {
@@ -90,14 +90,14 @@ a[data-toggle="collapse"] {
 }
 
 #sidebar ul li a:hover {
-  color: #7386D5;
-  background: #fff;
+  color: #ffff;
+  background: #3f4663;
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
-  color: #fff;
-  background: #6d7fcc;
+  color: #ffff;
+  background: #12243a;
 }
 
 p {
@@ -119,7 +119,7 @@ a:focus {
 
 ul ul a {
   padding-left: 30px !important;
-  background: #6d7fcc;
+  background: #12243a;
 }
 
 @media (max-width: 1198px) {

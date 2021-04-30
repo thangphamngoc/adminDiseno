@@ -116,7 +116,7 @@ export default {
   },
   middleware: "auth",
   metaInfo() {
-    return { title: this.$t("Quản lý Nick") };
+    return { title: this.$t("Manager Home") };
   },
   data() {
     return {
