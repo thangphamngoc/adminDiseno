@@ -20,6 +20,7 @@ class CreateProjectsTable extends Migration
             $table->string('create_by');
             $table->boolean('del_active')->default($value=true);
 
+            $table->boolean('status')->default($value=true);
             $table->string('urlPicture');
             $table->string('ulrLocal');
             $table->string('namePicture');

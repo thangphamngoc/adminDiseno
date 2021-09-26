@@ -15,15 +15,16 @@ export default [
 
   { path: '/home', name: 'home', component: page('home.vue') },
   { path: '/manager-home', name: 'homeManager', component: page('homeManager.vue') },
-  { path: '/total-day-nick', name: 'totalDayNick', component: page('totalDayNick.vue') },
+  // { path: '/total-day-nick', name: 'totalDayNick', component: page('totalDayNick.vue') },
   { path: '/detail-add-day', name: 'detailAddDay', component: page('detailAddDay.vue') },
 
 
-  { path: '/manager-add', name: 'addManager', component: page('addManager.vue') },
-  { path: '/ctv/manager', name: 'ctvManager', component: page('ctv/ctvManager.vue') },
-  { path: '/active/activeDay', name: 'activeDay', component: page('active/activeDay.vue') },
+  // { path: '/manager-add', name: '', component: page('addManager.vue') },
+  // { path: '/projects/add', name: 'addProject', component: page('projects/projectManager.vue') },
+  { path: '/projects', name: 'addProject', component: page('projects/projectManager.vue') },
 
-  { path: '/manager-post', name: 'postHome', component: page('post/postHome.vue') },
+  { path: '/posts', name: 'posts', component: page('posts/postManager.vue') },
+  { path: '/posts/add', name: 'addPost', component: page('posts/addPost.vue') },
   { path: '/statistic/month', name: 'statisticMonth', component: page('statisc/month.vue') },
   // { path: '/statistic/year', name: 'statisticYear', component: page('statisc/year.vue') },
 

@@ -46,7 +46,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::patch('settings/profile', 'Settings\ProfileController@update');
     Route::patch('settings/password', 'Settings\PasswordController@update');
 
-    // manager nick
+    // manager home
     Route::post('home/banner', 'HomeBannerController@store');
     Route::get('home/data', 'HomeBannerController@index');
     Route::put('home/update', 'HomeBannerController@update');
@@ -57,10 +57,10 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('nick/detail-add-day', 'HomeBannerController@addDayDetail');
     //end manager nick
 
-    // manager ctv
-    Route::post('ctv/add', 'InfoEmployeeController@store');
-    Route::get('ctv/data', 'InfoEmployeeController@index');
-    Route::put('ctv/update', 'InfoEmployeeController@update');
+    // manager project
+    Route::post('project/add', 'ProjectController@store');
+    Route::get('project/data', 'ProjectController@index');
+    Route::put('ctv/update', 'ProjectController@update');
     //end manager ctv
 
     // total day

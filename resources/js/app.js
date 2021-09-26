@@ -7,12 +7,18 @@ import FlashMessage from '@smartweb/vue-flash-message'
 import swal from 'sweetalert2'
 import moment from 'moment'
 
+
+
+
 Vue.prototype.moment = moment
-
-
 
 import '~/plugins'
 import '~/components'
+
+Vue.component('ckeditor', require('./components/Ckeditor.vue').default);
+import CKEditor from 'ckeditor4-vue';
+Vue.use(CKEditor);
+
 
 window.Swal = swal;
 Vue.config.productionTip = false
@@ -20,8 +26,8 @@ window.axios = require('axios');
 Vue.use(FlashMessage);
 /* eslint-disable no-new */
 new Vue({
-  i18n,
-  store,
-  router,
-  ...App
+    i18n,
+    store,
+    router,
+    ...App
 })

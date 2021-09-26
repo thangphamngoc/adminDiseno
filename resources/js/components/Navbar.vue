@@ -135,12 +135,7 @@
               </li>
               <li @click="menuToggle()">
                 <router-link :to="{ name: 'totalDayNick' }">
-                  Tổng add ngày
-                </router-link>
-              </li>
-              <li @click="menuToggle()">
-                <router-link :to="{ name: 'addManager' }">
-                  ADD hàng ngày
+                  Display
                 </router-link>
               </li>
             </ul>
@@ -155,8 +150,8 @@
             >
             <ul class="collapse list-unstyled" id="pageSubmenu2">
               <li @click="menuToggle()">
-                <router-link :to="{ name: 'ctvManager' }">
-                  CTV add hs
+                <router-link :to="{ name: 'addProject' }">
+                  Projects
                 </router-link>
               </li>
               <li @click="menuToggle()">
@@ -176,17 +171,14 @@
               data-toggle="collapse"
               aria-expanded="false"
               class="dropdown-toggle"
-              >Kích hoạt</a
+              >Manager Post</a
             >
             <ul class="collapse list-unstyled" id="pageSubmenu5">
-              <li @click="menuToggle()">
-                <router-link :to="{ name: 'activeDay' }"> Ngày </router-link>
+              <li>
+                <router-link :to="{ name: 'posts' }"> Posts </router-link>
               </li>
-              <li @click="menuToggle()">
+              <li>
                 <a href="#">Tháng</a>
-              </li>
-              <li @click="menuToggle()">
-                <a href="#">Năm</a>
               </li>
             </ul>
           </li>

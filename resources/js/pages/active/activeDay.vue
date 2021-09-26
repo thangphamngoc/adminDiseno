@@ -118,20 +118,21 @@
         </div>
       </div>
     </div>
-    <ctvAdd
+    <add-project
       :active.sync="showCreateDialog"
       @dialog-close="dialogCloseCreateMethod()"
-      ref="ctvAdd"
+      ref="AddProject"
     />
   </div>
 </template>
 <script>
-import ctvAdd from "../ctv/ctvAdd.vue";
 import moment from "moment";
+import AddProject from '../projects/addProject.vue';
 
 export default {
   components: {
     ctvAdd,
+    AddProject,
   },
   middleware: "auth",
   metaInfo() {

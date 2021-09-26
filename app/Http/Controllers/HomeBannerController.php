@@ -28,7 +28,7 @@ class HomeBannerController extends Controller
         $bannerList = DB::table('homes')
             // ->join('ex_nick_images', 'info_nick_fb.id', '=', 'ex_nick_images.info_nick_fb_id')
             // ->join('image_spas', 'ex_nick_images.image_spas_id', '=', 'image_spas.id')
-            // ->where('info_nick_fb.user_id', Auth::user()->id)
+            ->where('homes.status', True)
             ->orderBy('homes.sort', 'asc')
             ->get();
         foreach ($bannerList as $value) {
@@ -91,11 +91,11 @@ class HomeBannerController extends Controller
     {
 
         // dd($request->route('id'));
-        $viewDay = DB::table('day_add_friend')
-            ->where('day_add_friend.day_add_total_id', $request->route('id'))
-            ->orderBy('day_add_friend.created_at', 'desc')
-            ->get();
-        return response($viewDay);
+        // $viewDay = DB::table('day_add_friend')
+        //     ->where('day_add_friend.day_add_total_id', $request->route('id'))
+        //     ->orderBy('day_add_friend.created_at', 'desc')
+        //     ->get();
+        // return response($viewDay);
     }
 
     public function create(Request $request)
@@ -150,14 +150,14 @@ class HomeBannerController extends Controller
     public function update(Request $request)
     {
         // $nickOld = NickFb::where('id',$request->id)->get();
-        $nickOld = NickFb::find($request->info_nick_fb_id);
-        $nickOld->nick_name = $request->nick_name;
-        $nickOld->url_fb = $request->url_fb;
-        $nickOld->username_fb = $request->username_fb;
-        $nickOld->password_fb = $request->password_fb;
-        $nickOld->status_nick = $request->status_nick;
-        $nickOld->number_friend = $request->number_friend;
-        $nickOld->save();
+        // $nickOld = NickFb::find($request->info_nick_fb_id);
+        // $nickOld->nick_name = $request->nick_name;
+        // $nickOld->url_fb = $request->url_fb;
+        // $nickOld->username_fb = $request->username_fb;
+        // $nickOld->password_fb = $request->password_fb;
+        // $nickOld->status_nick = $request->status_nick;
+        // $nickOld->number_friend = $request->number_friend;
+        // $nickOld->save();
     }
 
     public function destroy(Request $request)

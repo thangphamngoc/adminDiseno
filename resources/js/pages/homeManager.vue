@@ -111,20 +111,20 @@
         </div>
       </div>
     </div>
-    <addNick
+    <addBanner
       :active.sync="showCreateDialog"
       @dialog-close="dialogCloseCreateMethod()"
-      ref="addNick"
+      ref="addBanner"
     />
   </div>
 </template>
 <script>
-import addNick from "./addNick.vue";
+import addBanner from "./addBanner.vue";
 import moment from "moment";
 
 export default {
   components: {
-    addNick,
+    addBanner,
   },
   middleware: "auth",
   metaInfo() {

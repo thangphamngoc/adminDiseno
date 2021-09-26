@@ -99,7 +99,7 @@
 <script>
 import FetchUsers from "~/components/FetchUsers";
 import Button from '../components/Button.vue';
-import ViewPost from './post/viewPost.vue';
+import ViewPost from './posts/viewPost.vue';
 export default {
   components: {
     FetchUsers,

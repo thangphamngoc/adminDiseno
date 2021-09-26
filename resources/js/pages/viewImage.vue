@@ -14,13 +14,17 @@
         </div>
         <hr />
         <div class="d-flex">
-        <!-- <div  v-if="images.length == 1">
+          <!-- <div  v-if="images.length == 1">
             <img v-bind:src="images" alt="ảnh đại diện fb" style="width: 15.5rem;"/>
         </div> -->
-        <div  v-for="(item, key) in images " class="item-image">
-            <img v-bind:src="item" alt="ảnh đại diện fb" style="width: 15.5rem;"/>
+          <div v-for="(item, key) in images" class="item-image" :key="key">
+            <img
+              v-bind:src="item"
+              alt="ảnh đại diện fb"
+              style="width: 15.5rem"
+            />
+          </div>
         </div>
-      </div>
       </div>
     </div>
   </transition>
@@ -49,20 +53,20 @@ export default {
     closeDialog() {
       this.images = "";
     },
-    getData(data){
-      if(Array.isArray(data)){
+    getData(data) {
+      if (Array.isArray(data)) {
         this.images = data;
-      }else{
+      } else {
         this.images.push(data);
       }
-    }
+    },
   },
 };
 </script>
 
 <style scoped>
-.item-image{
-  margin: 0 10px 0 0px  ;
+.item-image {
+  margin: 0 10px 0 0px;
 }
 .remove-button {
   position: absolute;

@@ -8,7 +8,23 @@ class Projects extends Model
 {
     //
     protected $table = 'projects';
-    protected $fillable = [];
+    protected $fillable = [
+        "title",
+        "titleEn",
+        "content",
+        "contentEn",
+        "titlePicture",
+        "titlePictureEn",
+        "create_by",
+        "id_create",
+        "urlPicture",
+        "namePicture",
+        "ulrLocal",
+        "type",
+        "address",
+        "descreption",
+        "slud",
+    ];
 
     public function projectDetail()
     {

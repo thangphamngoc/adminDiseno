@@ -101,20 +101,20 @@
         </div>
       </div>
     </div>
-    <addNick
+    <add-project
       :active.sync="showCreateDialog"
       @dialog-close="dialogCloseCreateMethod()"
-      ref="addNick"
+      ref="AddProject"
     />
   </div>
 </template>
 <script>
-import addNick from "./addNick.vue";
 import moment from "moment";
+import AddProject from './projects/addProject.vue';
 
 export default {
   components: {
-    addNick,
+    AddProject,
   },
   middleware: "auth",
   metaInfo() {

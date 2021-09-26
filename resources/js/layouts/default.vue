@@ -23,10 +23,3 @@ export default {
 };
 </script>
 
-<style type="text/css" scoped="scss">
-/* @media (min-width: 1198px) {
-    .content-fluid{
-      padding-left:200px; 
-    }
-} */
-</style>
